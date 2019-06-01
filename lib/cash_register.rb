@@ -5,7 +5,7 @@ class CashRegister
   def initialize(discount = 20)
     @total = 0.00
     @discount = discount
-    @cart = []
+    @items = []
   end
   
   def add_item(item, price, quantity = 1)
@@ -14,7 +14,7 @@ class CashRegister
     item_info[:price] = price
     item_info[:quantity] = quantity
 
-    @cart << item_info
+    @items << item_info
 
     @total += price * quantity
   end
@@ -30,7 +30,7 @@ class CashRegister
   
   def items
     item_names = []
-    @cart.each do | item_info |
+    @items.each do | item_info |
       for qty in 1..item_info[:quantity] 
         item_names << item_info[:name]
       end 
