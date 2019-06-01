@@ -39,6 +39,6 @@ class CashRegister
   end 
   
    def void_last_transaction
-    self.cart.pop
+    self.cart -= self.cart.pop
   end
 end
